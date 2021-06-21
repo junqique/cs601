@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Random User Generator</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div class="container" id="app">
+            <div class= "top" id="top">
+                <a class="active" href="index.html"><i class="fa fa-home"></i></a> 
+                <p>Jiadong Tang</p>
+            </div>
+            <div class= "content1">
+                <form id="form" class="form" @submit.prevent="processForm">
+                    <div class="form-control">
+                        <label class="label">Enter a number(1-1084)</label>
+                        <input type="number" id="width" v-model="width" @blur="validateWidth" required>
+                        <p class="wrong" v-if="errors.width">
+                            Please enter a valid Number
+                        </p>
+                    </div>
+    
+                    <button @click="processForm" class="btn" v-model="btn">Click me for pictures</button>
+                </form>
+            </div>
+            <div class="content2">
+                <div class="image">
+                    <p><img v-bind:src="picture"></p>
+                </div>
+            </div>
+            <div class= "footer">
+                <a href="https://www.facebook.com/profile.php?id=100069065325228" class="fa fa-facebook-official"></a>
+                <a href="https://github.com/junqique?tab=repositories" class="fa fa-github-square"></a>
+                <a href="https://www.instagram.com/lemonade3460/" class="fa fa-instagram"></a>
+            </div>
+        </div>
+
+        <script src="app/app.js"></script>
+        
+    </body>
+</html>
+
+<style scoped>
+    *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        background-color: white;
+        justify-content: center;
+    }
+
+    .container{
+        width: 100%;
+        height:110vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.7fr 1fr 1fr 0.2fr;
+        grid-template-areas: 
+        "top top top top"
+        "content1 content1 content1 content1"
+        "content2 content2 content2 content2"
+        "footer footer footer footer";
+        grid-gap:0rem;
+        position: absolute;
+    }
+
+    .top{
+        width: 100%;
+        grid-area: top;
+        text-align: center;
+        background-color:#e3e5fc;
+        overflow: auto;
+        border-bottom: solid black;
+        position: absolute;
+        z-index: 500;
+    }
+
+    .top a{
+        float:right;
+        width: 20%;
+        text-align: center;
+        padding:25px 10px;
+        transition: all 0.3s ease;
+        font-size: 40px;
+    }
+
+    .top a i{
+        color:black;
+    }
+
+
+    .top a.active{
+        background-color:#e3f2fc;
+        color:white;
+    }
+
+    .sticky{
+        position: fixed;
+        top:0;
+        width:100%;
+    }
+
+    .sticky + .content1 + .content2 + .content3 +.content4 +.footer{
+        padding-top:60px;
+    }
+
+    .top p{
+        float: left;
+        width: 20%;
+        text-align: center;
+        justify-content: center;
+        padding:20px 10px;
+        font-family: 'Brush Script MT',cursive;
+        font-size:2.6rem;
+    }
+
+    .content1{
+        grid-area: content1;
+        text-align: center;
+        justify-content: center;
+        text-indent:2cm;
+        line-height: 1cm;
+        width:80%;
+        height: 100%;
+        margin:auto;
+        position:static;
+        z-index: 1;
+    }
+
+    .content2{
+        grid-area: content2;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        float: left;
+    }
+
+    .footer{
+        grid-area: footer;
+        text-align:center;
+        background-color: #e3e5fc;
+
+    }
+
+    .footer a{
+        padding:20px;
+        font-size: 30px;
+        width:50px;
+        margin:5px 2px;
+        text-decoration: none;
+        color: #fceee3;
+        line-height: 1;
+    }
+
+    .btn{
+        background-color: #e3e5fc;
+        padding: 10px 10px;
+        width: 30%;
+    }
+</style>
