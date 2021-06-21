@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head> 
+        <title>CS601 Portfilio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class= "top" id="top">
+                <a class="active" href="../project/index.html"><i class="fa fa-home"></i></a> 
+                <p>Jiadong Tang</p>
+            </div>
+            <div class= "content1">
+                <h2>Basketball</h2><br><br>
+                <p><iframe width="500" height="500" src="https://www.youtube.com/embed/-y2GRN9ozHg"></iframe></p>
+
+            </div>
+            <div class=content2>
+                <h2>Esports</h2><br><br>
+                <p><iframe width="700"height="500"src="https://www.youtube.com/embed/fB8TyLTD7EE"></iframe></p>
+            </div>
+            <div class="content3">
+                <h2>Travel</h2><br><br>
+                <p><iframe width="500" height="500" src="https://www.youtube.com/embed/NUDBwBJeKvY"></iframe></p>
+            </div>
+
+            
+
+            <div class= "footer">
+                <a href="https://www.facebook.com/profile.php?id=100069065325228" class="fa fa-facebook-official"></a>
+                <a href="https://github.com/junqique?tab=repositories" class="fa fa-github-square"></a>
+                <a href="https://www.instagram.com/lemonade3460/" class="fa fa-instagram"></a>
+            </div>
+
+        </div>
+        <script src="app/onscroll.js"></script>
+
+    </body>
+</html>
+
+<style scoped>
+    *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        background-color: white;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .container{
+        width: 100%;
+        height:300vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.4fr 2.5fr 2.5fr 2.5fr 0.2fr;
+        grid-template-areas: 
+        "top top top top"
+        "content1 content1 content1 content1"
+        "content2 content2 content2 content2"
+        "content3 content3 content3 content3"
+        "footer footer footer footer";
+        position: absolute;
+        grid-gap: 0rem;
+    }
+
+    .top{
+        width: 100%;
+        grid-area: top;
+        text-align: center;
+        background-color:#e3e5fc;
+        overflow: auto;
+        border-bottom: solid black;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .top a{
+        float:right;
+        width: 20%;
+        text-align: center;
+        padding:25px 10px;
+        transition: all 0.3s ease;
+        font-size: 40px;
+        z-index: 1;
+    }
+
+    .top a i{
+        color:black;
+    }
+
+
+    .top a.active{
+        background-color:#e3f2fc;
+        color:white;
+    }
+
+    .sticky{
+        position: fixed;
+        top:0;
+        width:100%;
+    }
+
+    .sticky + .content1 + .content2 + .content3 +.content4 +.footer{
+        padding-top:60px;
+    }
+
+    .top p{
+        float: left;
+        width: 20%;
+        text-align: center;
+        justify-content: center;
+        padding:20px 10px;
+        font-family: 'Brush Script MT',cursive;
+        font-size:2.6rem;
+        z-index: 1;
+    }
+
+    .content1{
+        grid-area: content1;
+        /* width: 80%; */
+        background-color: rgb(243, 242, 242);
+        /* background-color: brown; */
+    }
+
+    .content1-img{
+        grid-area: content1-img;
+        background-image: url(img/basketball-img.jpg);
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .content1 h2{
+        text-align: center;
+        position: relative;
+        margin-top: 5%;
+    }
+
+    .content1 iframe{
+       margin-left: auto;
+       margin-right: auto;
+       position: absolute;
+       width: 100%;
+    }
+
+    .content2{
+        grid-area: content2;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        background-color: rgb(243, 242, 242);
+    }
+
+    .content2-img{
+        grid-area: content2-img;
+        background-image: url(img/esport.jpeg);
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* width: 100%; */
+    }
+
+    .content2 h2{
+        text-align: center;
+        position: relative;
+        margin-top: 5%;
+    }
+
+    .content2 iframe{
+        width: 100%;
+    }
+
+  
+
+    .content3{
+        grid-area: content3;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        background-color: rgb(243, 242, 242);
+    }
+
+    .content3-img{
+        grid-area: content3-img;
+        background-image: url(img/travel.jpeg);
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .content3 h2{
+        text-align: center;
+        position: relative;
+        margin-top: 5%;
+    }
+
+    .content3 iframe{
+      
+       width: 100%;
+    }
+
+
+    .footer{
+        grid-area: footer;
+        text-align:center;
+        background-color: #e3e5fc;
+
+    }
+
+    .footer a{
+        padding:20px;
+        font-size: 30px;
+        width:50px;
+        margin:5px 2px;
+        text-decoration: none;
+        color: #fceee3;
+        line-height: 1;
+    }
+
+</style>
